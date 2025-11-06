@@ -13,7 +13,7 @@ export default function FAQPage({ onBookingClick }: FAQPageProps) {
       category: "General",
       questions: [
         {
-          question: "What services does MoveWell offer?",
+          question: "What services does Movewell Recovery offer?",
           answer: "We offer a range of bodywork services including Assisted Stretching, Advanced Release & Massage, and Joint Mobilization. Each service is designed to help improve mobility, reduce pain, and enhance overall wellness."
         },
         {

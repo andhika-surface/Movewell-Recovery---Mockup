@@ -12,10 +12,10 @@ export default function Hero({ onBookingClick }: HeroProps) {
           {/* Left Content */}
           <div className="space-y-6">
             <h1 className="text-gray-900">
-              Your Modern Bodywork Studio in Jakarta
+              Movewell Recovery - Your Modern Bodywork Studio in Jakarta
             </h1>
             <p className="text-gray-600 max-w-md">
-              We help athletes, professionals, and everyday movers care for their bodies and move better.
+              Recovery. Stretch. Massage - We help athletes, professionals, and everyday movers care for their bodies and move better.
             </p>
             <button 
               onClick={onBookingClick}

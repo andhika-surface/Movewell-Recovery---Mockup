@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import logoImage from "figma:asset/b87c00d318429c172c816f212b2203a440420c1e.png";
 
 interface HeaderProps {
   currentPage?: string;
@@ -33,14 +34,12 @@ export default function Header({ currentPage = "home", onNavigate, onBookingClic
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <button onClick={() => handleNavClick("home")} className="flex items-center gap-2">
-            <div className="flex items-center justify-center w-8 h-8 bg-gray-900 rounded">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M3 10L7 6L11 10L7 14L3 10Z" fill="white"/>
-                <path d="M9 10L13 6L17 10L13 14L9 10Z" fill="white"/>
-              </svg>
-            </div>
-            <span className="text-gray-900">MoveWell</span>
+          <button onClick={() => handleNavClick("home")} className="flex items-center">
+            <img 
+              src={logoImage} 
+              alt="Movewell Recovery" 
+              className="h-12 w-auto"
+            />
           </button>
 
           {/* Desktop Navigation */}

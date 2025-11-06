@@ -10,7 +10,7 @@ export default function AboutPage({ onBookingClick }: AboutPageProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
         {/* Header */}
         <div className="mb-12">
-          <h1 className="text-gray-900 mb-4">About MoveWell</h1>
+          <h1 className="text-gray-900 mb-4">About Movewell Recovery</h1>
           <p className="text-gray-600 max-w-2xl">
             Committed to helping our patients feel better and move with confidence
           </p>
@@ -22,13 +22,13 @@ export default function AboutPage({ onBookingClick }: AboutPageProps) {
             <div>
               <h2 className="text-gray-900 mb-4">Our Story</h2>
               <p className="text-gray-600">
-                MoveWell is a premier bodywork studio founded by experienced professionals with a passion for helping people improve their mobility and recover from injuries.
+                Movewell Recovery is a premier bodywork studio founded by experienced professionals with a passion for helping people improve their mobility and recover from injuries.
               </p>
             </div>
             <div className="relative w-full aspect-video bg-gray-100 rounded-xl overflow-hidden">
               <ImageWithFallback
                 src="https://images.unsplash.com/photo-1593234270323-0414ec1574e1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwaHlzaWNhbCUyMHRoZXJhcHklMjBzcG9ydHMlMjB0cmFpbmluZ3xlbnwxfHx8fDE3NjIzMjQ4NDl8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                alt="MoveWell sports training and therapy"
+                alt="Movewell Recovery sports training and therapy"
                 className="w-full h-full object-cover"
               />
             </div>

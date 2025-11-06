@@ -11,7 +11,7 @@ export default function TestimonialsPage({ onBookingClick }: TestimonialsPagePro
       role: "Marathon Runner",
       image: "SJ",
       rating: 5,
-      text: "MoveWell has been a game-changer for my training. The assisted stretching sessions have significantly improved my flexibility and helped me avoid injuries. Highly recommend!",
+      text: "Movewell Recovery has been a game-changer for my training. The assisted stretching sessions have significantly improved my flexibility and helped me avoid injuries. Highly recommend!",
       date: "October 2024"
     },
     {
@@ -19,7 +19,7 @@ export default function TestimonialsPage({ onBookingClick }: TestimonialsPagePro
       role: "Office Professional",
       image: "MC",
       rating: 5,
-      text: "After years of desk work, I was dealing with chronic back pain. The team at MoveWell created a personalized treatment plan that has made a huge difference. I can finally work without discomfort.",
+      text: "After years of desk work, I was dealing with chronic back pain. The team at Movewell Recovery created a personalized treatment plan that has made a huge difference. I can finally work without discomfort.",
       date: "September 2024"
     },
     {
@@ -43,7 +43,7 @@ export default function TestimonialsPage({ onBookingClick }: TestimonialsPagePro
       role: "Busy Mom",
       image: "AL",
       rating: 5,
-      text: "Between taking care of three kids and working full-time, my body was constantly aching. MoveWell's treatments have given me my energy back. I feel like a new person!",
+      text: "Between taking care of three kids and working full-time, my body was constantly aching. Movewell Recovery's treatments have given me my energy back. I feel like a new person!",
       date: "October 2024"
     },
     {
@@ -51,7 +51,7 @@ export default function TestimonialsPage({ onBookingClick }: TestimonialsPagePro
       role: "Construction Worker",
       image: "JW",
       rating: 5,
-      text: "My job is physically demanding, and I was struggling with shoulder pain. The therapists at MoveWell identified the problem and helped me get back to work pain-free. Fantastic service!",
+      text: "My job is physically demanding, and I was struggling with shoulder pain. The therapists at Movewell Recovery identified the problem and helped me get back to work pain-free. Fantastic service!",
       date: "September 2024"
     }
   ];
@@ -63,7 +63,7 @@ export default function TestimonialsPage({ onBookingClick }: TestimonialsPagePro
         <div className="mb-12 text-center">
           <h1 className="text-gray-900 mb-4">What Our Clients Say</h1>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Don't just take our word for it - hear from some of our satisfied clients about their experience with MoveWell
+            Don't just take our word for it - hear from some of our satisfied clients about their experience with Movewell Recovery
           </p>
         </div>
 

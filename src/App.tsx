@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Services from "./components/Services";
@@ -11,13 +11,31 @@ import FAQPage from "./components/FAQPage";
 import PromoPage from "./components/PromoPage";
 import ArticlesPage from "./components/ArticlesPage";
 import BookingModal from "./components/BookingModal";
+import AdminLogin from "./components/admin/AdminLogin";
+import AdminDashboard from "./components/admin/AdminDashboard";
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState("home");
   const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
+  const [isAdminAuthenticated, setIsAdminAuthenticated] = useState(false);
+
+  useEffect(() => {
+    // Check if user is on admin route
+    const path = window.location.pathname;
+    if (path === "/admin-access-2024") {
+      setCurrentPage("admin");
+      // Check if already authenticated
+      const authToken = localStorage.getItem("adminAuth");
+      if (authToken === "true") {
+        setIsAdminAuthenticated(true);
+      }
+    }
+  }, []);
 
   const handleNavigation = (page: string) => {
     setCurrentPage(page);
+    // Update URL without reloading
+    window.history.pushState({}, "", page === "home" ? "/" : `/${page}`);
     // Scroll to top when navigating
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -26,7 +44,27 @@ export default function App() {
     setIsBookingModalOpen(true);
   };
 
+  const handleAdminLoginSuccess = () => {
+    setIsAdminAuthenticated(true);
+  };
+
+  const handleAdminLogout = () => {
+    localStorage.removeItem("adminAuth");
+    setIsAdminAuthenticated(false);
+    setCurrentPage("home");
+    window.history.pushState({}, "", "/");
+  };
+
   const renderPage = () => {
+    // Admin route handling
+    if (currentPage === "admin") {
+      if (!isAdminAuthenticated) {
+        return <AdminLogin onLoginSuccess={handleAdminLoginSuccess} />;
+      }
+      return <AdminDashboard onLogout={handleAdminLogout} />;
+    }
+
+    // Regular pages
     switch (currentPage) {
       case "home":
         return (
@@ -64,6 +102,15 @@ export default function App() {
         );
     }
   };
+
+  // Don't show header/footer on admin page
+  if (currentPage === "admin") {
+    return (
+      <div className="min-h-screen bg-white">
+        {renderPage()}
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-white">

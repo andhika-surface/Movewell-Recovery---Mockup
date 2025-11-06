@@ -1,6 +1,41 @@
+import { useState } from "react";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 
 export default function ContactPage() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: ""
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Format WhatsApp message
+    const whatsappMessage = `Hi, Move.. aku sudah isi dari web dengan data berikut:
+
+*Contact Message*
+Nama: ${formData.name}
+Email: ${formData.email}
+Pesan: ${formData.message}`;
+
+    // WhatsApp number (without + and spaces)
+    const whatsappNumber = "628111728128";
+    
+    // Create WhatsApp URL
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+    
+    // Open WhatsApp in new tab
+    window.open(whatsappURL, '_blank');
+    
+    // Reset form
+    setFormData({
+      name: "",
+      email: "",
+      message: ""
+    });
+  };
+
   return (
     <div className="w-full bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
@@ -76,11 +111,14 @@ export default function ContactPage() {
           <div className="bg-white rounded-2xl p-8">
             <h2 className="text-gray-900 mb-6">Send Us a Message</h2>
             
-            <form className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label className="block text-gray-700 mb-2">Name</label>
                 <input
                   type="text"
+                  required
+                  value={formData.name}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900"
                   placeholder="Your name"
                 />
@@ -90,6 +128,9 @@ export default function ContactPage() {
                 <label className="block text-gray-700 mb-2">Email</label>
                 <input
                   type="email"
+                  required
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900"
                   placeholder="your@email.com"
                 />
@@ -99,6 +140,9 @@ export default function ContactPage() {
                 <label className="block text-gray-700 mb-2">Message</label>
                 <textarea
                   rows={6}
+                  required
+                  value={formData.message}
+                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900"
                   placeholder="How can we help you?"
                 />
@@ -108,7 +152,7 @@ export default function ContactPage() {
                 type="submit"
                 className="w-full bg-gray-900 text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition-colors"
               >
-                Send Message
+                Send Message via WhatsApp
               </button>
             </form>
           </div>

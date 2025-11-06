@@ -19,10 +19,41 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log("Booking submitted:", formData);
-    alert("Your booking request has been submitted! We'll contact you shortly to confirm.");
+    
+    // Format WhatsApp message
+    const message = `Hi, Move.. aku sudah isi dari web dengan data berikut:
+
+*Booking Request*
+Nama: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone}
+Service: ${formData.service}
+Tanggal: ${formData.date}
+Waktu: ${formData.time}
+${formData.message ? `Catatan: ${formData.message}` : ''}`;
+
+    // WhatsApp number (without + and spaces)
+    const whatsappNumber = "628111728128";
+    
+    // Create WhatsApp URL
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    
+    // Open WhatsApp in new tab
+    window.open(whatsappURL, '_blank');
+    
+    // Close modal
     onClose();
+    
+    // Reset form
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      service: "",
+      date: "",
+      time: "",
+      message: ""
+    });
   };
 
   if (!isOpen) return null;

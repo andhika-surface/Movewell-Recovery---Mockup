@@ -1,16 +1,12 @@
 import { Sparkles, Tag, Clock, Check } from "lucide-react";
+import { promosData, type PromoData } from "../data/promos";
 
 interface PromoPageProps {
   onBookingClick?: () => void;
 }
 
 export default function PromoPage({ onBookingClick }: PromoPageProps) {
-  const openingRates = [
-    { duration: "15 minutes", price: "IDR 80K", regularPrice: "90k" },
-    { duration: "30 minutes", price: "IDR 150K", regularPrice: "175k" },
-    { duration: "60 minutes", price: "IDR 280K", regularPrice: "325k" },
-    { duration: "90 minutes", price: "IDR 420K", regularPrice: "485k" }
-  ];
+  const promoData: PromoData = promosData;
 
   return (
     <div className="w-full bg-gray-50">
@@ -19,13 +15,13 @@ export default function PromoPage({ onBookingClick }: PromoPageProps) {
         <div className="mb-8 text-center">
           <div className="flex items-center justify-center gap-2 mb-4">
             <Sparkles className="w-8 h-8 text-blue-600" />
-            <h1 className="text-gray-900">MoveWell Opening Promo</h1>
+            <h1 className="text-gray-900">{promoData.header.title}</h1>
           </div>
-          <p className="text-blue-600 mb-2">Founding Month Special!</p>
+          <p className="text-blue-600 mb-2">{promoData.header.subtitle}</p>
           <div className="text-gray-600 max-w-2xl mx-auto space-y-1">
-            <p><span className="text-gray-900">Location:</span> Padel Pro Signature, Permata Hijau</p>
-            <p><span className="text-gray-900">Period:</span> Valid for first 30 days after opening.</p>
-            <p><span className="text-gray-900">Booking:</span> Via WhatsApp only — limited daily slots.</p>
+            <p><span className="text-gray-900">Location:</span> {promoData.header.location}</p>
+            <p><span className="text-gray-900">Period:</span> {promoData.header.period}</p>
+            <p><span className="text-gray-900">Booking:</span> {promoData.header.booking}</p>
           </div>
         </div>
 
@@ -40,7 +36,7 @@ export default function PromoPage({ onBookingClick }: PromoPageProps) {
             </div>
             <p className="text-gray-600 mb-6">Discover our special introductory prices for single sessions:</p>
             <div className="space-y-4">
-              {openingRates.map((rate, index) => (
+              {promoData.openingRates.map((rate, index) => (
                 <div key={index} className="flex items-center justify-between pb-4 border-b border-gray-100 last:border-0">
                   <div className="text-gray-900">{rate.duration}</div>
                   <div className="flex items-center gap-3">
@@ -68,38 +64,26 @@ export default function PromoPage({ onBookingClick }: PromoPageProps) {
             </p>
 
             <div className="space-y-4 mb-6">
-              <div className="bg-gray-800 rounded-xl p-4">
-                <div className="flex items-baseline justify-between mb-2">
-                  <div className="text-white">10 sessions (30 min each)</div>
-                  <div className="text-orange-400">IDR 1.4M</div>
+              {promoData.voucherPacks.map((pack, index) => (
+                <div key={index} className="bg-gray-800 rounded-xl p-4">
+                  <div className="flex items-baseline justify-between mb-2">
+                    <div className="text-white">{pack.title}</div>
+                    <div className="text-orange-400">{pack.price}</div>
+                  </div>
+                  <div className="text-gray-400 text-sm">({pack.pricePerSession})</div>
                 </div>
-                <div className="text-gray-400 text-sm">(IDR 140k per session)</div>
-              </div>
-
-              <div className="bg-gray-800 rounded-xl p-4">
-                <div className="flex items-baseline justify-between mb-2">
-                  <div className="text-white">20 sessions (30 min each)</div>
-                  <div className="text-orange-400">IDR 2.7M</div>
-                </div>
-                <div className="text-gray-400 text-sm">(IDR 135k per session)</div>
-              </div>
+              ))}
             </div>
 
             <div className="bg-gray-800 rounded-xl p-4">
               <p className="text-gray-300 mb-3">Each voucher is valid for 30 minutes and can be used flexibly:</p>
               <ul className="space-y-2">
-                <li className="flex items-start gap-2">
-                  <Check className="w-5 h-5 flex-shrink-0 mt-0.5 text-orange-400" />
-                  <span className="text-gray-300">1 voucher = 30 min (or 15 min before + 15 min after workout)</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="w-5 h-5 flex-shrink-0 mt-0.5 text-orange-400" />
-                  <span className="text-gray-300">2 vouchers = 60 min</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="w-5 h-5 flex-shrink-0 mt-0.5 text-orange-400" />
-                  <span className="text-gray-300">3 vouchers = 90 min</span>
-                </li>
+                {promoData.voucherFlexibility.map((option, index) => (
+                  <li key={index} className="flex items-start gap-2">
+                    <Check className="w-5 h-5 flex-shrink-0 mt-0.5 text-orange-400" />
+                    <span className="text-gray-300">{option}</span>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
