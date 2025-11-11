@@ -1,7 +1,7 @@
 
-  # Movewell-Mockup-UI/UX
+  # Movewell-Mockup-UI/UX (Community)
 
-  This is a code bundle for Movewell-Mockup-UI/UX. The original project is available at https://www.figma.com/design/IdjBLMc6ZAPGShwbNDSGu0/Movewell-Mockup-UI-UX.
+  This is a code bundle for Movewell-Mockup-UI/UX (Community). The original project is available at https://www.figma.com/design/lZYU473o179meVnJgyhfOb/Movewell-Mockup-UI-UX--Community-.
 
   ## Running the code
 

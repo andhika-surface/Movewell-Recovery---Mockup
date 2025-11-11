@@ -11,7 +11,7 @@ This folder contains all website content in TypeScript format.
 ## ✏️ How to Edit Content
 
 ### Option 1: Via Admin Panel (Recommended)
-1. Go to `/admin-access-2024`
+1. Go to `/adminbackend`
 2. Login with admin credentials
 3. Edit content using forms
 4. Copy generated JSON

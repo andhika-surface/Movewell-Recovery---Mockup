@@ -62,7 +62,7 @@ export default function TeamPage({ onBookingClick }: TeamPageProps) {
           <h2 className="text-gray-900 mb-6">How We Help</h2>
           <ul className="space-y-4 mb-8">
             <li className="flex items-start gap-3">
-              <div className="w-6 h-6 bg-gray-900 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+              <div className="w-6 h-6 bg-[#1B5F8F] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                 <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                 </svg>
@@ -72,7 +72,7 @@ export default function TeamPage({ onBookingClick }: TeamPageProps) {
               </div>
             </li>
             <li className="flex items-start gap-3">
-              <div className="w-6 h-6 bg-gray-900 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+              <div className="w-6 h-6 bg-[#1B5F8F] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                 <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                 </svg>
@@ -82,7 +82,7 @@ export default function TeamPage({ onBookingClick }: TeamPageProps) {
               </div>
             </li>
             <li className="flex items-start gap-3">
-              <div className="w-6 h-6 bg-gray-900 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+              <div className="w-6 h-6 bg-[#1B5F8F] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                 <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                 </svg>
@@ -95,7 +95,7 @@ export default function TeamPage({ onBookingClick }: TeamPageProps) {
 
           <button 
             onClick={onBookingClick}
-            className="bg-gray-900 text-white px-8 py-4 rounded-lg hover:bg-gray-800 transition-colors"
+            className="bg-[#1B5F8F] text-white px-8 py-4 rounded-lg hover:bg-[#154A72] transition-colors"
           >
             Book Your Session
           </button>
