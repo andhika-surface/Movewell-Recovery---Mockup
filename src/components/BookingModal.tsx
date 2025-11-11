@@ -212,7 +212,7 @@ ${formData.message ? `Catatan: ${formData.message}` : ''}`;
             </button>
             <button
               type="submit"
-              className="flex-1 bg-gray-900 text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition-colors"
+              className="flex-1 bg-[#1B5F8F] text-white px-6 py-3 rounded-lg hover:bg-[#154A72] transition-colors"
             >
               Submit Booking Request
             </button>

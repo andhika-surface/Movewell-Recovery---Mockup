@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import Services from "./components/Services";
 import AboutPage from "./components/AboutPage";
@@ -22,7 +23,7 @@ export default function App() {
   useEffect(() => {
     // Check if user is on admin route
     const path = window.location.pathname;
-    if (path === "/admin-access-2024") {
+    if (path === "/adminbackend") {
       setCurrentPage("admin");
       // Check if already authenticated
       const authToken = localStorage.getItem("adminAuth");
@@ -106,20 +107,23 @@ export default function App() {
   // Don't show header/footer on admin page
   if (currentPage === "admin") {
     return (
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-[#E8F1F8]">
         {renderPage()}
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#E8F1F8] flex flex-col">
       <Header 
         currentPage={currentPage} 
         onNavigate={handleNavigation}
         onBookingClick={handleBookingClick}
       />
-      {renderPage()}
+      <main className="flex-grow">
+        {renderPage()}
+      </main>
+      <Footer />
       <BookingModal 
         isOpen={isBookingModalOpen} 
         onClose={() => setIsBookingModalOpen(false)} 

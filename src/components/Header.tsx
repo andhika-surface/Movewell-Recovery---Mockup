@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import logoImage from "figma:asset/b87c00d318429c172c816f212b2203a440420c1e.png";
+import logoImage from "figma:asset/27ea2c074ca04bfa56539c3e55f9a0aa8c0d139c.png";
 
 interface HeaderProps {
   currentPage?: string;
@@ -32,13 +32,13 @@ export default function Header({ currentPage = "home", onNavigate, onBookingClic
   return (
     <header className="w-full bg-white border-b border-gray-200 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-28 sm:h-36 md:h-48 lg:h-[220px]">
           {/* Logo */}
           <button onClick={() => handleNavClick("home")} className="flex items-center">
             <img 
               src={logoImage} 
               alt="Movewell Recovery" 
-              className="h-12 w-auto"
+              className="h-24 sm:h-32 md:h-44 lg:h-[200px] w-auto"
             />
           </button>
 
@@ -58,7 +58,7 @@ export default function Header({ currentPage = "home", onNavigate, onBookingClic
           {/* Desktop CTA Button */}
           <button 
             onClick={onBookingClick}
-            className="hidden lg:block bg-gray-900 text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition-colors"
+            className="hidden lg:block bg-[#1B5F8F] text-white px-6 py-3 rounded-lg hover:bg-[#154A72] transition-colors"
           >
             Book Your Session
           </button>
@@ -92,7 +92,7 @@ export default function Header({ currentPage = "home", onNavigate, onBookingClic
                   onBookingClick?.();
                   setMobileMenuOpen(false);
                 }}
-                className="bg-gray-900 text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition-colors text-center mt-2"
+                className="bg-[#1B5F8F] text-white px-6 py-3 rounded-lg hover:bg-[#154A72] transition-colors text-center mt-2"
               >
                 Book Your Session
               </button>

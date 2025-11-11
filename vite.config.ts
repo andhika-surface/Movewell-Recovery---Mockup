@@ -3,13 +3,7 @@
   import react from '@vitejs/plugin-react-swc';
   import path from 'path';
 
-  // Deteksi otomatis apakah sedang di lokal atau di GitHub Pages
-  const isGithubPages = process.env.GITHUB_PAGES === 'true';
-
   export default defineConfig({
-    base: isGithubPages
-    ? '/Movewell-Recovery---Mockup/' // untuk GitHub Pages
-    : './', // untuk lokal (npm run preview)
     plugins: [react()],
     resolve: {
       extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
@@ -23,7 +17,7 @@
         'next-themes@0.4.6': 'next-themes',
         'lucide-react@0.487.0': 'lucide-react',
         'input-otp@1.4.2': 'input-otp',
-        'figma:asset/b87c00d318429c172c816f212b2203a440420c1e.png': path.resolve(__dirname, './src/assets/b87c00d318429c172c816f212b2203a440420c1e.png'),
+        'figma:asset/27ea2c074ca04bfa56539c3e55f9a0aa8c0d139c.png': path.resolve(__dirname, './src/assets/27ea2c074ca04bfa56539c3e55f9a0aa8c0d139c.png'),
         'figma:asset/1e04bdbb2432d9abea81c70124a6180481ac3086.png': path.resolve(__dirname, './src/assets/1e04bdbb2432d9abea81c70124a6180481ac3086.png'),
         'embla-carousel-react@8.6.0': 'embla-carousel-react',
         'cmdk@1.1.1': 'cmdk',

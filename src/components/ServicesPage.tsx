@@ -54,7 +54,7 @@ export default function ServicesPage({ onBookingClick }: ServicesPageProps) {
             return (
               <div
                 key={index}
-                className="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-shadow"
+                className="bg-[#D6E9F5] border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-shadow"
               >
                 <div className="flex items-start gap-6">
                   <div className={`w-16 h-16 ${service.bgColor} rounded-xl flex items-center justify-center flex-shrink-0`}>
@@ -91,7 +91,7 @@ export default function ServicesPage({ onBookingClick }: ServicesPageProps) {
           </div>
 
           {/* Voucher Package */}
-          <div className="bg-gray-900 text-white rounded-2xl p-8">
+          <div className="bg-[#1B5F8F] text-white rounded-2xl p-8">
             <h2 className="mb-6">Voucher Package (Regular)</h2>
             <div className="mb-6">
               <div className="text-gray-300 mb-2">Buy 10 x 30-min vouchers at <span className="text-white">IDR 150k</span> each (total IDR 1.5m).</div>
@@ -121,12 +121,12 @@ export default function ServicesPage({ onBookingClick }: ServicesPageProps) {
         </div>
 
         {/* First-Time Client Offer */}
-        <div className="bg-blue-50 border border-blue-200 rounded-2xl p-8 mb-12 text-center">
-          <h2 className="text-blue-900 mb-3">First-Time Client Offer</h2>
-          <p className="text-blue-800">
-            Your first 15-minute trial session is <span className="text-blue-900">completely free.</span>
+        <div className="bg-[#E8F4F8] border border-[#1B5F8F]/30 rounded-2xl p-8 mb-12 text-center">
+          <h2 className="text-[#1B5F8F] mb-3">First-Time Client Offer</h2>
+          <p className="text-[#154A72]">
+            Your first 15-minute trial session is <span className="text-[#1B5F8F]">completely free.</span>
           </p>
-          <p className="text-blue-700 text-sm mt-2">
+          <p className="text-gray-700 text-sm mt-2">
             This offer must be booked through our customer service and cannot be claimed as a walk-in.
           </p>
         </div>
@@ -139,7 +139,7 @@ export default function ServicesPage({ onBookingClick }: ServicesPageProps) {
           </p>
           <button 
             onClick={onBookingClick}
-            className="bg-gray-900 text-white px-8 py-4 rounded-lg hover:bg-gray-800 transition-colors"
+            className="bg-[#1B5F8F] text-white px-8 py-4 rounded-lg hover:bg-[#154A72] transition-colors"
           >
             Book Your Session
           </button>
