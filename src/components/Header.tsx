@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import logoImage from "/src/assets/placeholder.png";
+import logoImage from "/src/assets/logo.png";
 
 interface HeaderProps {
   currentPage?: string;
