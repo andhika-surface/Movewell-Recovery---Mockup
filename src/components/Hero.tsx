@@ -19,7 +19,7 @@ export default function Hero({ onBookingClick }: HeroProps) {
             </p>
             <button 
               onClick={onBookingClick}
-              className="bg-[#1B5F8F] text-white px-8 py-4 rounded-lg hover:bg-[#154A72] transition-colors"
+              className="bg-gray-900 text-white px-8 py-4 rounded-lg hover:bg-gray-800 transition-colors"
             >
               Book Your Session
             </button>

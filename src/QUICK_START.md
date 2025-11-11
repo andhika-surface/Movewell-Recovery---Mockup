@@ -1,9 +1,9 @@
-# ⚡ Movewell Recovery - Quick Start Guide
+# ⚡ MoveWell - Quick Start Guide
 
 ## 🎯 Untuk Marketing/Admin Team
 
 ### 🔐 Login Info
-- **URL:** `https://your-domain.com/adminbackend` (RAHASIA!)
+- **URL:** `https://your-domain.com/admin-access-2024` (RAHASIA!)
 - **Email:** `admin@movewellindonesia.com`
 - **Password:** `Kramat010`
 

@@ -1,14 +1,5 @@
 # Changelog - Movewell Recovery Website
 
-## Version 2.1 - November 10, 2024
-
-### 🔧 UI & Route Updates
-- ✅ **Logo Size:** Increased from h-12 to h-16 (sm:h-20) for better visibility
-- ✅ **Admin Route:** Changed from `/admin-access-2024` to `/adminbackend`
-- ✅ **Footer:** Added copyright footer "© Copyright 2025 Movewell Recovery. All rights reserved"
-
----
-
 ## Version 2.0 - November 6, 2024
 
 ### 🎨 Branding Updates

@@ -1,10 +1,10 @@
-# 📝 Movewell Recovery Admin Panel - Panduan Penggunaan
+# 📝 MoveWell Admin Panel - Panduan Penggunaan
 
 ## 🔐 Login ke Admin Panel
 
 1. **Buka URL Admin (RAHASIA - jangan share ke publik):**
    ```
-   https://your-domain.com/adminbackend
+   https://your-domain.com/admin-access-2024
    ```
 
 2. **Kredensial Login:**
