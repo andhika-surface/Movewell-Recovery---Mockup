@@ -1,4 +1,4 @@
-import imgHomeMockup from "figma:asset/1e04bdbb2432d9abea81c70124a6180481ac3086.png";
+import imgHomeMockup from "/src/assets/placeholder.png";
 
 export default function Frame() {
   return (
