@@ -107,14 +107,14 @@ export default function App() {
   // Don't show header/footer on admin page
   if (currentPage === "admin") {
     return (
-      <div className="min-h-screen bg-[#E8F1F8]">
+      <div className="min-h-screen bg-white">
         {renderPage()}
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-[#E8F1F8] flex flex-col">
+    <div className="min-h-screen bg-white flex flex-col">
       <Header 
         currentPage={currentPage} 
         onNavigate={handleNavigation}

@@ -54,7 +54,7 @@ export default function ServicesPage({ onBookingClick }: ServicesPageProps) {
             return (
               <div
                 key={index}
-                className="bg-[#D6E9F5] border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-shadow"
+                className="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-shadow"
               >
                 <div className="flex items-start gap-6">
                   <div className={`w-16 h-16 ${service.bgColor} rounded-xl flex items-center justify-center flex-shrink-0`}>

@@ -38,7 +38,7 @@ export default function Services() {
             return (
               <div
                 key={index}
-                className="bg-[#D6E9F5] rounded-2xl p-8 hover:shadow-lg transition-shadow duration-300"
+                className="bg-white rounded-2xl p-8 hover:shadow-lg transition-shadow duration-300"
               >
                 <div className={`w-14 h-14 ${service.bgColor} rounded-xl flex items-center justify-center mb-6`}>
                   <Icon className={`w-7 h-7 ${service.iconColor}`} />
