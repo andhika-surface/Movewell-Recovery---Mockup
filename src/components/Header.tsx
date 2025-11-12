@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import logoImage from "figma:asset/27ea2c074ca04bfa56539c3e55f9a0aa8c0d139c.png";
+import logoImage from "figma:asset/b87c00d318429c172c816f212b2203a440420c1e.png";
 
 interface HeaderProps {
   currentPage?: string;
