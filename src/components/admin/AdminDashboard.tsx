@@ -1,6 +1,8 @@
 import { useState } from "react";
-import { Tag, LogOut, Copy, Check, Download } from "lucide-react";
+import { FileText, Tag, LogOut, Copy, Check, Download } from "lucide-react";
+import ArticleEditor from "./ArticleEditor";
 import PromoEditor from "./PromoEditor";
+import { articlesData } from "../../data/articles";
 import { promosData } from "../../data/promos";
 
 interface AdminDashboardProps {
@@ -8,23 +10,27 @@ interface AdminDashboardProps {
 }
 
 export default function AdminDashboard({ onLogout }: AdminDashboardProps) {
+  const [activeTab, setActiveTab] = useState<"articles" | "promos">("articles");
+  const [articles, setArticles] = useState(articlesData);
   const [promos, setPromos] = useState(promosData);
   const [copied, setCopied] = useState(false);
 
   const handleCopyJSON = () => {
-    const jsonString = JSON.stringify(promos, null, 2);
+    const data = activeTab === "articles" ? articles : promos;
+    const jsonString = JSON.stringify(data, null, 2);
     navigator.clipboard.writeText(jsonString);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
 
   const handleDownloadJSON = () => {
-    const jsonString = JSON.stringify(promos, null, 2);
+    const data = activeTab === "articles" ? articles : promos;
+    const jsonString = JSON.stringify(data, null, 2);
     const blob = new Blob([jsonString], { type: "application/json" });
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = "promos.json";
+    a.download = `${activeTab}.json`;
     a.click();
     URL.revokeObjectURL(url);
   };
@@ -36,8 +42,8 @@ export default function AdminDashboard({ onLogout }: AdminDashboardProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-[#1a497f] rounded-lg flex items-center justify-center">
-                <Tag className="w-5 h-5 text-white" />
+              <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+                <FileText className="w-5 h-5 text-white" />
               </div>
               <div>
                 <h1 className="text-gray-900">Movewell Recovery Admin</h1>
@@ -56,15 +62,32 @@ export default function AdminDashboard({ onLogout }: AdminDashboardProps) {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Header Title */}
-        <div className="bg-white rounded-lg shadow-sm mb-6 p-6">
-          <div className="flex items-center gap-3">
-            <div className="w-12 h-12 bg-[#1a497f] rounded-lg flex items-center justify-center">
-              <Tag className="w-6 h-6 text-white" />
-            </div>
-            <div>
-              <h2 className="text-gray-900">Promo Management</h2>
-              <p className="text-gray-600 text-sm">Manage promotional offers and special rates</p>
+        {/* Tabs */}
+        <div className="bg-white rounded-lg shadow-sm mb-6">
+          <div className="border-b border-gray-200">
+            <div className="flex">
+              <button
+                onClick={() => setActiveTab("articles")}
+                className={`flex-1 flex items-center justify-center gap-2 px-6 py-4 transition-colors ${
+                  activeTab === "articles"
+                    ? "border-b-2 border-blue-600 text-blue-600"
+                    : "text-gray-600 hover:text-gray-900"
+                }`}
+              >
+                <FileText className="w-5 h-5" />
+                <span>Articles</span>
+              </button>
+              <button
+                onClick={() => setActiveTab("promos")}
+                className={`flex-1 flex items-center justify-center gap-2 px-6 py-4 transition-colors ${
+                  activeTab === "promos"
+                    ? "border-b-2 border-blue-600 text-blue-600"
+                    : "text-gray-600 hover:text-gray-900"
+                }`}
+              >
+                <Tag className="w-5 h-5" />
+                <span>Promos</span>
+              </button>
             </div>
           </div>
         </div>
@@ -73,11 +96,11 @@ export default function AdminDashboard({ onLogout }: AdminDashboardProps) {
         <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-6">
           <h3 className="text-blue-900 mb-2">📝 Cara Menggunakan Admin Panel</h3>
           <ol className="text-blue-800 space-y-2 text-sm">
-            <li><strong>1.</strong> Edit data promo menggunakan form di bawah</li>
+            <li><strong>1.</strong> Edit data artikel/promo menggunakan form di bawah</li>
             <li><strong>2.</strong> Klik tombol "Copy JSON" untuk menyalin hasil edit</li>
-            <li><strong>3.</strong> Buka GitHub repository → folder /data → pilih file <code className="bg-blue-100 px-1 rounded">promos.ts</code></li>
+            <li><strong>3.</strong> Buka GitHub repository → folder /data → pilih file <code className="bg-blue-100 px-1 rounded">articles.ts</code> atau <code className="bg-blue-100 px-1 rounded">promos.ts</code></li>
             <li><strong>4.</strong> Klik tombol Edit (icon pensil) di GitHub</li>
-            <li><strong>5.</strong> Cari baris <code className="bg-blue-100 px-1 rounded">export const promosData</code></li>
+            <li><strong>5.</strong> Cari baris <code className="bg-blue-100 px-1 rounded">export const articlesData</code> atau <code className="bg-blue-100 px-1 rounded">export const promosData</code></li>
             <li><strong>6.</strong> Replace hanya bagian data (array/object) dengan JSON yang di-copy. Jangan hapus <code className="bg-blue-100 px-1 rounded">export const</code>!</li>
             <li><strong>7.</strong> Commit changes → Website akan auto-rebuild & deploy (1-2 menit)</li>
             <li><strong>8.</strong> Refresh browser untuk lihat perubahan (Ctrl+Shift+R jika perlu)</li>
@@ -112,17 +135,23 @@ export default function AdminDashboard({ onLogout }: AdminDashboardProps) {
 
         {/* Editor */}
         <div className="bg-white rounded-lg shadow-sm p-6">
-          <PromoEditor promos={promos} setPromos={setPromos} />
+          {activeTab === "articles" ? (
+            <ArticleEditor articles={articles} setArticles={setArticles} />
+          ) : (
+            <PromoEditor promos={promos} setPromos={setPromos} />
+          )}
         </div>
 
         {/* JSON Preview */}
         <div className="bg-gray-900 rounded-lg p-6 mt-6">
           <div className="flex items-center justify-between mb-4">
             <h3 className="text-white">JSON Preview</h3>
-            <span className="text-gray-400 text-sm">promos.json</span>
+            <span className="text-gray-400 text-sm">
+              {activeTab === "articles" ? "articles.json" : "promos.json"}
+            </span>
           </div>
           <pre className="text-green-400 text-sm overflow-x-auto">
-            {JSON.stringify(promos, null, 2)}
+            {JSON.stringify(activeTab === "articles" ? articles : promos, null, 2)}
           </pre>
         </div>
       </div>

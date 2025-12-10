@@ -55,7 +55,7 @@ Pesan: ${formData.message}`;
               
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-[#1a497f] rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-[#1B5F8F] rounded-lg flex items-center justify-center flex-shrink-0">
                     <MapPin className="w-6 h-6 text-white" />
                   </div>
                   <div>
@@ -69,7 +69,7 @@ Pesan: ${formData.message}`;
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-[#1a497f] rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-[#1B5F8F] rounded-lg flex items-center justify-center flex-shrink-0">
                     <Phone className="w-6 h-6 text-white" />
                   </div>
                   <div>
@@ -79,7 +79,7 @@ Pesan: ${formData.message}`;
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-[#1a497f] rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-[#1B5F8F] rounded-lg flex items-center justify-center flex-shrink-0">
                     <Mail className="w-6 h-6 text-white" />
                   </div>
                   <div>
@@ -93,7 +93,7 @@ Pesan: ${formData.message}`;
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-[#1a497f] rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 bg-[#1B5F8F] rounded-lg flex items-center justify-center flex-shrink-0">
                     <Clock className="w-6 h-6 text-white" />
                   </div>
                   <div>
@@ -119,7 +119,7 @@ Pesan: ${formData.message}`;
                   required
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1a497f]"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900"
                   placeholder="Your name"
                 />
               </div>
@@ -131,7 +131,7 @@ Pesan: ${formData.message}`;
                   required
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1a497f]"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900"
                   placeholder="your@email.com"
                 />
               </div>
@@ -143,14 +143,14 @@ Pesan: ${formData.message}`;
                   required
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1a497f]"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900"
                   placeholder="How can we help you?"
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-[#30302f] text-white px-6 py-3 rounded-lg hover:bg-[#404040] transition-colors"
+                className="w-full bg-gray-900 text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition-colors"
               >
                 Send Message via WhatsApp
               </button>

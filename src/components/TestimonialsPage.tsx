@@ -118,14 +118,14 @@ export default function TestimonialsPage({ onBookingClick }: TestimonialsPagePro
         </div>
 
         {/* CTA Section */}
-        <div className="bg-[#30302f] rounded-2xl p-8 md:p-12 text-center text-white">
+        <div className="bg-gray-900 rounded-2xl p-8 md:p-12 text-center text-white">
           <h2 className="mb-4">Ready to Experience the Difference?</h2>
           <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
             Join hundreds of satisfied clients and start your journey to better movement and wellness
           </p>
           <button 
             onClick={onBookingClick}
-            className="bg-white text-[#30302f] px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors"
+            className="bg-white text-gray-900 px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors"
           >
             Book Your Session
           </button>

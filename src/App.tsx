@@ -10,6 +10,7 @@ import ContactPage from "./components/ContactPage";
 import TestimonialsPage from "./components/TestimonialsPage";
 import FAQPage from "./components/FAQPage";
 import PromoPage from "./components/PromoPage";
+import ArticlesPage from "./components/ArticlesPage";
 import BookingModal from "./components/BookingModal";
 import AdminLogin from "./components/admin/AdminLogin";
 import AdminDashboard from "./components/admin/AdminDashboard";
@@ -71,8 +72,6 @@ export default function App() {
           <>
             <Hero onBookingClick={handleBookingClick} />
             <Services />
-            <TestimonialsPage onBookingClick={handleBookingClick} />
-            <FAQPage onBookingClick={handleBookingClick} />
           </>
         );
       case "services":
@@ -87,6 +86,12 @@ export default function App() {
             <TeamPage onBookingClick={handleBookingClick} />
           </>
         );
+      case "testimonials":
+        return <TestimonialsPage onBookingClick={handleBookingClick} />;
+      case "articles":
+        return <ArticlesPage onBookingClick={handleBookingClick} />;
+      case "faq":
+        return <FAQPage onBookingClick={handleBookingClick} />;
       case "contact":
         return <ContactPage />;
       default:
@@ -94,8 +99,6 @@ export default function App() {
           <>
             <Hero onBookingClick={handleBookingClick} />
             <Services />
-            <TestimonialsPage onBookingClick={handleBookingClick} />
-            <FAQPage onBookingClick={handleBookingClick} />
           </>
         );
     }
@@ -104,14 +107,14 @@ export default function App() {
   // Don't show header/footer on admin page
   if (currentPage === "admin") {
     return (
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-[#E8F1F8]">
         {renderPage()}
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-white flex flex-col">
+    <div className="min-h-screen bg-[#E8F1F8] flex flex-col">
       <Header 
         currentPage={currentPage} 
         onNavigate={handleNavigation}

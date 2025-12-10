@@ -6,22 +6,22 @@ export default function Services() {
       icon: Workflow,
       title: "Assisted Stretching",
       description: "Targeted stretches to increase your mobility and range of motion",
-      bgColor: "bg-[#e8eaf4]",
-      iconColor: "text-[#5d68a1]"
+      bgColor: "bg-[#E8F4F8]",
+      iconColor: "text-[#1B5F8F]"
     },
     {
       icon: Heart,
       title: "Advanced Release & Massage",
       description: "Scientific therapy to relieve muscle tension and discomfort",
-      bgColor: "bg-[#e8eaf4]",
-      iconColor: "text-[#5d68a1]"
+      bgColor: "bg-[#E0F5F7]",
+      iconColor: "text-[#0098A8]"
     },
     {
       icon: Move,
       title: "Joint Mobilization",
       description: "Manual techniques to improve joint function and reduce pain",
-      bgColor: "bg-[#e8eaf4]",
-      iconColor: "text-[#5d68a1]"
+      bgColor: "bg-[#E8F4F8]",
+      iconColor: "text-[#1B5F8F]"
     }
   ];
 
@@ -38,7 +38,7 @@ export default function Services() {
             return (
               <div
                 key={index}
-                className="bg-[#e8eaf4] rounded-2xl p-8 hover:shadow-lg transition-shadow duration-300"
+                className="bg-[#D6E9F5] rounded-2xl p-8 hover:shadow-lg transition-shadow duration-300"
               >
                 <div className={`w-14 h-14 ${service.bgColor} rounded-xl flex items-center justify-center mb-6`}>
                   <Icon className={`w-7 h-7 ${service.iconColor}`} />

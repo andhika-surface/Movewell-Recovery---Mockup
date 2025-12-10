@@ -85,7 +85,7 @@ export default function FAQPage({ onBookingClick }: FAQPageProps) {
         {/* Header */}
         <div className="mb-12 text-center">
           <div className="flex justify-center mb-4">
-            <div className="w-16 h-16 bg-[#1a497f] rounded-full flex items-center justify-center">
+            <div className="w-16 h-16 bg-gray-900 rounded-full flex items-center justify-center">
               <HelpCircle className="w-8 h-8 text-white" />
             </div>
           </div>
@@ -140,7 +140,7 @@ export default function FAQPage({ onBookingClick }: FAQPageProps) {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button 
               onClick={onBookingClick}
-              className="bg-[#1a497f] text-white px-8 py-4 rounded-lg hover:bg-[#15395f] transition-colors"
+              className="bg-gray-900 text-white px-8 py-4 rounded-lg hover:bg-gray-800 transition-colors"
             >
               Book a Consultation
             </button>
