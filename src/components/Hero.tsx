@@ -1,4 +1,5 @@
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import heroImage from "figma:asset/f0f840365061725fbbf8db5389f79f765e3742fc.png";
 
 interface HeroProps {
   onBookingClick?: () => void;
@@ -19,7 +20,7 @@ export default function Hero({ onBookingClick }: HeroProps) {
             </p>
             <button 
               onClick={onBookingClick}
-              className="bg-[#1B5F8F] text-white px-8 py-4 rounded-lg hover:bg-[#154A72] transition-colors"
+              className="bg-[#1a497f] text-white px-8 py-4 rounded-lg hover:bg-[#0f3359] transition-colors"
             >
               Book Your Session
             </button>
@@ -27,8 +28,8 @@ export default function Hero({ onBookingClick }: HeroProps) {
 
           {/* Right Image */}
           <div className="relative w-full aspect-[4/3] bg-gray-100 rounded-2xl overflow-hidden">
-            <ImageWithFallback
-              src="https://images.unsplash.com/photo-1648638810948-f3bf2cccdde9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwaHlzaWNhbCUyMHRoZXJhcHklMjBtYXNzYWdlfGVufDF8fHx8MTc2MjMyMTIxNXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+            <img
+              src={heroImage}
               alt="Physical therapist working with client"
               className="w-full h-full object-cover"
             />
