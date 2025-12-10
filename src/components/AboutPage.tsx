@@ -1,4 +1,5 @@
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import aboutImage from "figma:asset/c41210cdea7ed9d1649b8c86efbc6d1945f5efb9.png";
 
 interface AboutPageProps {
   onBookingClick?: () => void;
@@ -26,8 +27,8 @@ export default function AboutPage({ onBookingClick }: AboutPageProps) {
               </p>
             </div>
             <div className="relative w-full aspect-video bg-gray-100 rounded-xl overflow-hidden">
-              <ImageWithFallback
-                src="https://images.unsplash.com/photo-1593234270323-0414ec1574e1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwaHlzaWNhbCUyMHRoZXJhcHklMjBzcG9ydHMlMjB0cmFpbmluZ3xlbnwxfHx8fDE3NjIzMjQ4NDl8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+              <img
+                src={aboutImage}
                 alt="Movewell Recovery sports training and therapy"
                 className="w-full h-full object-cover"
               />
